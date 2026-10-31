@@ -1,0 +1,2 @@
+import {defineConfig,devices} from '@playwright/test';
+export default defineConfig({testDir:'./tests',fullyParallel:false,use:{baseURL:process.env.TRIPDECK_TEST_URL||'http://127.0.0.1:5173',...devices['Desktop Chrome'],channel:process.env.TRIPDECK_TEST_CHANNEL||undefined},webServer:{command:'npm run dev',url:process.env.TRIPDECK_TEST_URL||'http://127.0.0.1:5173',reuseExistingServer:true},reporter:'list'});
